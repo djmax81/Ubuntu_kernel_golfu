@@ -1083,20 +1083,20 @@ early_param("pmem_adsp_size", pmem_adsp_size_setup);
 #define SND(desc, num) { .name = #desc, .id = num }
 static struct snd_endpoint snd_endpoints_list[] = {
 	SND(HANDSET, 0),
-	SND(SPEAKER, 1),
-	SND(HEADSET,2),
-	SND(BT, 3),
-	SND(CARKIT, 3),
-	SND(TTY_FULL, 5),
-	SND(TTY_HEADSET, 5),
-	SND(TTY_VCO, 6),
-	SND(TTY_HCO, 7),
-	SND(NO_MIC_HEADSET, 8),
-	SND(FM_HEADSET, 9),
-	SND(HEADSET_AND_SPEAKER, 10),
-	SND(STEREO_HEADSET_AND_SPEAKER, 10),
-	SND(BT_EC_OFF, 44),
-	SND(CURRENT, 256),
+        SND(SPEAKER, 1),
+        SND(HEADSET,2),
+        SND(BT, 3),
+        SND(CARKIT, 3),
+        SND(TTY_FULL, 5),
+        SND(TTY_HEADSET, 5),
+        SND(TTY_VCO, 6),
+        SND(TTY_HCO, 7),
+        SND(NO_MIC_HEADSET, 8),
+        SND(FM_HEADSET, 9),
+        SND(HEADSET_AND_SPEAKER, 10),
+        SND(STEREO_HEADSET_AND_SPEAKER, 10),
+        SND(BT_EC_OFF, 44),
+        SND(CURRENT, 256),
 };
 #undef SND
 
@@ -1878,7 +1878,7 @@ static void msm7x27a_cfg_uart2dm_serial(void)
 static void msm7x27a_cfg_uart2dm_serial(void) { }
 #endif
 
-/*static struct resource ram_console_resources[] = {
+static struct resource ram_console_resources[] = {
 	{
 		.start  = MSM_RAM_CONSOLE_BASE,
 		.end    = MSM_RAM_CONSOLE_BASE + MSM_RAM_CONSOLE_SIZE - 1,
@@ -1891,7 +1891,7 @@ static struct platform_device ram_console_device = {
 	.id             = -1,
 	.num_resources  = ARRAY_SIZE(ram_console_resources),
 	.resource       = ram_console_resources,
-}; */
+};
 
 #if 0
 static struct platform_device *rumi_sim_devices[] __initdata = {
@@ -1952,7 +1952,7 @@ static struct platform_device *golfu_devices[] __initdata = {
 
 #else
 static struct platform_device *golfu_devices[] __initdata = {
-	/*&ram_console_device,*/
+	&ram_console_device,
 	&msm_device_dmov,
 	&msm_device_smd,
 	/* &msm_device_uart1, */
